@@ -17,61 +17,48 @@ from . import mobs    as M
 ROOMS: dict[int, Room] = {
 
     1: Room({
-        "number":      1,
-        "name":        "&+WThe Void&N",
-        "description": (
-            "There is nothing here but the sound of rushing wind.\n"
-            "We are waiting for the Spirit of God to move over it."
-        ),
-        "indoors": False,
-        "terrain": "no ground",
-        "exits": [
-            {"direction": "north", "roomId": 1},
-            {"direction": "south", "roomId": 1},
-            {"direction": "east",  "roomId": 2},
-            {"direction": "west",  "roomId": 3},
-            {"direction": "up",    "roomId": 1},
-            {"direction": "down",  "roomId": 1},
-        ],
-        "objects": [],
-        "mobs":    [M.spawn("void_guardian")],
-    }),
+        'number': 1,
+        'name': 'The Void',
+        'description': 'There is nothing here but the sound of rushing of wind.\nWe are waiting for the Spirit of God to move over it.',
+        'indoors': False,
+        'terrain': 'no ground',
+        'exits': [
+            {'direction': "north", "roomId": 1},
+            {'direction': "south", "roomId": 1},
+            {'direction': "east", "roomId": 2},
+            {'direction': "west", "roomId": 3},
+            {'direction': "up", "roomId": 1},
+            {'direction': "down", "roomId": 1}
+        ]}),
 
-    2: Room({
-        "number":      2,
-        "name":        "&wNot The Void&N",
-        "description": "You left.\nSo sorry.",
-        "indoors": False,
-        "terrain": "no ground",
-        "exits": [
-            {"direction": "north", "roomId": 1},
-            {"direction": "south", "roomId": 1},
-            {"direction": "west",  "roomId": 1},
+    2:  Room({
+        'number': 2,
+        'name': 'Not The Void',
+        'description': 'You left\nSo sorry',
+        'indoors': False,
+        'terrain': 'no ground',
+        'exits': [
+            {'direction': "north", "roomId": 1},
+            {'direction': 'south', 'roomId': 1}
         ],
         "objects": [
-            O.spawn("red_marker"),
-            O.spawn("green_marker"),
             O.spawn("silken_sack"),
-            O.spawn("elven_scimitar"),
+            O.spawn("windsong"),
         ],
         "mobs": [
             M.spawn("wandering_student"),
             M.spawn("wandering_student"),   # two independent students
-        ],
-    }),
+        ]}),
 
     3: Room({
-        "number":      3,
-        "name":        "&wNot the Not The Void&N",
-        "description": "Now you are stuck.",
-        "indoors": False,
-        "terrain": "no ground",
-        "exits": [],
-        "objects": [
+        'number': 3,
+        'name': 'Not the Not The Void',
+        'description': 'Now you stuck',
+        'indoors': False,
+        'terrain': 'no ground',
+        'exits': [],
+        'objects': [
             O.spawn("red_marker"),
-            O.spawn("green_marker"),
-        ],
-        "mobs": [],
-    }),
-
+            O.spawn("green_marker")
+        ]})
 }
